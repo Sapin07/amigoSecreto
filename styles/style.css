@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: 'Jetbrains Mono';
+    background-color: #FFFDFE;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 80px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 96vw;
+}
+.github-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    cursor: pointer;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vw;
+    width: 100vw;
+    max-width: 720px;
+}
+#ipt-participantes{
+    width: 60vw;
+    max-width: 500px;
+    height: 49px;
+    border: solid 1px
+}
+.add-friend{
+    height: 50px;
+}
+.friend-list{
+    width: 80vw;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.friend-item{
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+    background-color: aliceblue;
+    width: 80%;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+.btnFriend {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btnFriend:hover {
+    background-color: #d1d1d1;
+}
+.btnFriend::after {
+    content: "Editar";
+    position: absolute;
+    bottom: 120%;
+    left: 75%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: #FFFDFE;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.btnFriend:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
