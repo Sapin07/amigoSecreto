@@ -98,3 +98,111 @@ nav{
     visibility: visible;
     opacity: 1;
 }
+.result-box{
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    border-radius: 15px;
+    width: 350px;
+    min-height: 40px;
+}
+.result-header{
+    display: flex;
+    margin: 1rem;
+    width: 90%;
+    justify-content: space-between;
+}
+.result-list{
+    margin: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.result-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.result-sorteio {
+    position: relative; 
+    display: inline-block; 
+    overflow: hidden; 
+    color: #FFFDFE;
+    padding: 5px;
+    background-color: rgba(30, 28, 37, 0.5);
+    border-radius: 5px;
+}
+
+.result-sorteio::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1E1C25;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+.result-sorteio:hover::after {
+    visibility: hidden;
+    opacity: 0; 
+}
+
+.result-friend{
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.result-footer{
+    width: 96%;
+    padding: 14px 0;
+    border-top:  #b3b3b3 solid 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-btnAction{
+    width: 80px;
+    padding: 5px;
+    margin: 0 6px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.next{
+    border: #108800 solid 1px;
+    color: #108800;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.next:hover{
+    color: #fff;
+    background-color: #108800;
+}
+.anterior{
+    border: #c0222ffa solid 1px;
+    color: #c0222ffa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.anterior:hover{
+    color: #fff;
+    background-color: #c0222ffa;
+}
+
+.close{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.hidden{
+    visibility: hidden;
+}

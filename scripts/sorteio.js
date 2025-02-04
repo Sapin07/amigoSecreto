@@ -1,8 +1,16 @@
 const iptFriends = document.querySelector("#ipt-participantes");
 const btnAddFriend = document.querySelector(".add-friend");
 const friendList = document.querySelector(".friend-list");
+const resultBox = document.querySelector(".result-box");
+const resultBtnProximo = document.querySelector('.next');
+const resultBtnAnterior = document.querySelector('.anterior');
+const resultNomeAmigo = document.querySelector('.result-friend');
+const resultNomeSorteio = document.querySelector('.result-sorteio') 
 
-let friends = [];
+let friends = []; //lista dos participantes
+let sorteio = []; //armazena resultado do sorteio
+let indexAtual = 0; //vou usar isso depois para exibir o resultado do sorteio
+
 
 function updateList(){
     friendList.innerHTML = " ";
@@ -46,7 +54,7 @@ function generateRandomNum(limite){
 }
 
 function sortear(){
-    const sorteio = [];
+    sorteio = [];
     const numParticipantes = friends.length;
 
     for (friend of friends){
@@ -67,5 +75,27 @@ function sortear(){
         )
         sorteio.push(randomNum);
     }
-    return sorteio;
+    // console.log(sorteio);
+    
+    exibirResultado(3)
+}
+
+function exibirResultado(indexAtual){
+    const numParticipantes = friends.length;
+
+    if (numParticipantes == 0){
+        //previne exibir um resultado vazio caso eu tenha esquecido algo
+        window.alert("Ocorreu um erro! Tente inserir os participantes novamente");
+        return;
+    }
+    resultNomeAmigo.innerHTML = friends[indexAtual];
+    resultNomeSorteio.innerHTML = friends[sorteio[indexAtual]];
+    if (indexAtual == 0){
+        resultBtnAnterior.classList.add('hidden');
+        return;
+    }   
+    if (indexAtual+1 == numParticipantes){
+        resultBtnProximo.classList.add('hidden');
+        return;
+    }
 }
